@@ -1,0 +1,14 @@
+FROM openjdk:21
+WORKDIR /app
+
+ARG APP_VERSION=1
+ARG JAR_FILE=target/newsfeed-0.0.1-SNAPSHOT.jar
+
+ENV SPRING_PROFILES_ACTIVE=dev
+
+COPY $JAR_FILE app.jar
+
+EXPOSE 8080
+EXPOSE 8081
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

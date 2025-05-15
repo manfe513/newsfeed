@@ -1,0 +1,13 @@
+target
+.attach_pid*
+*.log
+
+# IDEA
+*.iml
+*.ipr
+*.iws
+.idea
+
+# MacOS
+.DS_Store
+pgdata

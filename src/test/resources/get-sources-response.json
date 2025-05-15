@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "rbk",
+    "url": "https://rssexport.rbc.ru/rbcnews/news/90/full.rss",
+    "rules": {
+      "id": 1,
+      "itemPath": "//item",
+      "titlePath": "title",
+      "descriptionPath": "description",
+      "datePath": "pubDate",
+      "dateFormat": "EEE, dd MMM yyyy HH:mm:ss Z"
+    }
+  }
+]

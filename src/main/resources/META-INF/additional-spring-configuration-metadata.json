@@ -1,0 +1,34 @@
+{
+  "properties": [
+    {
+      "name": "sources.rbk.actualizerPeriodMillis",
+      "type": "java.lang.Integer",
+      "description": "Частота обновления БД в миллисекундах."
+    },
+    {
+      "name": "sources.rbk.actualizerEnabled",
+      "type": "java.lang.Boolean",
+      "description": "Флаг разрешения Scheduled проверки свежих новостей."
+    },
+    {
+      "name": "sources.rbk.host",
+      "type": "java.lang.String",
+      "description": "Host источника данных РБК."
+    },
+    {
+      "name": "sources.rbk.connectionTimeoutMillis",
+      "type": "java.lang.String",
+      "description": "Таймаут подключения к источнику РБК."
+    },
+    {
+      "name": "sources.rbk.readTimeoutMillis",
+      "type": "java.lang.String",
+      "description": "Таймаут на чтение из источника РБК."
+    },
+    {
+      "name": "sources.rbk.actualizerCron",
+      "type": "java.lang.String",
+      "description": "Spring Cron расписание для запуска актуализатора новостей."
+    }
+  ]
+}

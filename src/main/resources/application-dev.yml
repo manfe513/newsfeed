@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/postgres # docker compose container name
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  flyway:
+    password: ${spring.datasource.password}
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}

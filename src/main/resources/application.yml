@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: test
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    username: postgres
+  flyway:
+    enabled: true
+    driver-class-name: org.postgresql.Driver
+    out-of-order: true
+    connect-retries: 5
+    baseline-on-migrate: true
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  sql:
+    init:
+      mode: always
+logging:
+  level:
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG
+server:
+  servlet:
+    encoding:
+      force: true
+management: #  просто смотрел какой будет вывод у этого апи
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  metrics:
+    enable:
+      http_server_requests: false
+      resilience4j:
+        calls: false
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: false
+    tags:
+      namespace: ${spring.application.name}
+
+network:
+  connection-timeout-millis: 2000
+  read-timeout-millis: 5000
+
+scheduler:
+  enabled: true
+  cron: "*/50 * * * * *" # каждые 5 сек
