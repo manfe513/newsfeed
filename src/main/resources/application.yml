@@ -59,4 +59,4 @@ network:
 
 scheduler:
   enabled: true
-  cron: "*/50 * * * * *" # каждые 5 сек
+  cron: "*/30 * * * * *" # каждые 30 сек

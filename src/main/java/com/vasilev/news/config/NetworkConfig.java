@@ -17,8 +17,8 @@ public class NetworkConfig {
 
     private final NetworkProperties networkProps;
 
-    @Bean("common")
-    public RestClient commonRestClient(RestClient.Builder builder) {
+    @Bean
+    public RestClient restClient(RestClient.Builder builder) {
         return builder
                 .requestFactory(
                         createRequestFactory(

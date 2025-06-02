@@ -8,6 +8,7 @@ pushd .. > /dev/null
 popd >/dev/null
 
 docker compose down
+rm -rf pgdata
 docker compose build
 docker compose up -d
 docker compose logs -f app

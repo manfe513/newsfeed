@@ -38,15 +38,12 @@ public class SourcesController {
     /**
      * Удаление источника новостей
      *
-     * @param request - данные источника для удаления
+     * @param id - данные источника для удаления
      */
-    @PostMapping(path = "/remove")
-    public ResponseEntity<Void> removeSource(
-            @RequestBody
-            RemoveSourceRequest request
-    ) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> removeSource(@PathVariable int id) {
 
-        sourcesService.removeSource(request.id());
+        sourcesService.removeSource(id);
 
         return ResponseEntity.ok().build();
     }
