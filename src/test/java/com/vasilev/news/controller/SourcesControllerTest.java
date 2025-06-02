@@ -74,9 +74,8 @@ class SourcesControllerTest extends AbstractControllerTest {
         assertEquals(stubSource, dbSource);
 
         // проверка удаления через http api
-        checkPost(
-                "/sources/remove",
-                new RemoveSourceRequest(dbSource.getId()),
+        checkDelete(
+                "/sources/%d".formatted(dbSource.getId()),
                 status().isOk()
         );
         assertEquals(0, sourcesRepo.count());

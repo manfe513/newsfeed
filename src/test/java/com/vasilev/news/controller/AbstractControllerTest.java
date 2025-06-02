@@ -58,6 +58,17 @@ abstract class AbstractControllerTest {
     }
 
     @SneakyThrows
+    protected void checkDelete(String endpoint, ResultMatcher... matchers) {
+        mockMvc.perform(
+                        MockMvcRequestBuilders.delete(endpoint)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpectAll(matchers);
+    }
+
+    @SneakyThrows
     protected void checkGet(String url, @NonNull ResultMatcher... matchers) {
         mockMvc.perform(MockMvcRequestBuilders.get(url))
                 .andDo(print())
