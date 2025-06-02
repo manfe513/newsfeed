@@ -1,10 +1,17 @@
 package com.vasilev.news.controller;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import com.github.tomakehurst.wiremock.stubbing.Scenario;
 import com.vasilev.news.actualizer.FeedActualizer;
+import com.vasilev.news.actualizer.FeedActualizerScheduler;
+import com.vasilev.news.actualizer.FeedLoader;
+import com.vasilev.news.model.db.SourceEntity;
+import com.vasilev.news.model.db.SourceRulesEntity;
 import com.vasilev.news.repository.FeedRepository;
 import com.vasilev.news.FeedTestData;
+import com.vasilev.news.repository.SourcesRepository;
+import com.vasilev.news.runner.FeedCommandLineRunner;
 import com.vasilev.news.service.FeedService;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
